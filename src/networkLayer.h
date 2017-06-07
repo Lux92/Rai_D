@@ -30,6 +30,9 @@ class NetworkLayer : public cSimpleModule
   protected:
     virtual void initialize(int stage);
     virtual void handleMessage(cMessage *msg);
+    virtual void handleUpperMessage(cMessage *msg);
+    virtual void handleLowerMessage(cMessage * msg);
+
     virtual int numInitStages() const override { return NUM_INIT_STAGES; }
 
        virtual void transmitFrame();
@@ -39,6 +42,7 @@ class NetworkLayer : public cSimpleModule
     double **matrice;
     MACAddress destAddr;
     MACAddress srcAddr;
+    double RSSI;
 
 };
 

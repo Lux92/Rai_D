@@ -205,6 +205,7 @@ $O/RssiLinkLayerControlInfo.o: RssiLinkLayerControlInfo.cc \
 $O/appLayer.o: appLayer.cc \
 	appLayer.h
 $O/networkLayer.o: networkLayer.cc \
+	Frame_m.h \
 	RssiLinkLayerControlInfo.h \
 	networkLayer.h \
 	$(INET_PROJ)/src/inet/common/Compat.h \
