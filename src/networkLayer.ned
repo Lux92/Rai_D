@@ -1,0 +1,20 @@
+//Livello di rete
+
+package rai_d4_3;
+
+simple NetworkLayer
+{
+
+    
+    parameters:
+        string DestAddr;
+        int numNodi = default(3);
+        
+        
+    gates:
+        input upperLayerIn;
+        output upperLayerOut;
+        input lowerLayerIn;
+        output lowerLayerOut;
+
+}

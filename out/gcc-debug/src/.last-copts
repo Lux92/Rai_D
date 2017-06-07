@@ -1,0 +1,1 @@
+-DHAVE_SWAPCONTEXT -DWITH_QTENV -DWITH_OSG -DWITH_TKENV -DWITH_MPI -DXMLPARSER=libxml -DWITH_PARSIM -DWITH_NETBUILDER  -g -Wall -fPIC  -fno-stack-protector  -I../../inet/src/inet/linklayer/common -I../../inet/src -I../../inet/src/inet/linklayer/csma -I../../inet/src/inet/networklayer/common -I. -I/home/lux/omnetpp-5.0/include
