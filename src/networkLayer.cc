@@ -130,7 +130,7 @@ MACAddress NetworkLayer::resolveMACAddress(const char *addr) {
  */
 
 
-void dijsktraAlg(double graph[numNodi][numNodi],ins src) {
+void dijsktraAlg(double graph[int numNodi][int numNodi],int src) {
 
     //Function that implements Dijkstra's single source shortest path algorithm
     // for a graph represented using adjacency matrix representation
