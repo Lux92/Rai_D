@@ -23,16 +23,16 @@ import rai_d4_3.Node;
 network Test
 {
     int numNodes;
-    
-    submodules:
-       
-     
+
+ 
+
+      submodules:
+        radioMedium: Ieee802154NarrowbandScalarRadioMedium {
+            @display("p=0,0");
+        }
+        node[numNodes]: Node {
+            @display("p=50,100,r,50");
+        }
         
-         node[numNodes]: Node {
-            @display("p=132,49");
-        }
-        radio: Ieee802154NarrowbandScalarRadioMedium {
-            @display("p=55,39");
-        }
     connections allowunconnected:
 }

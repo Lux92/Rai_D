@@ -9,22 +9,25 @@
 Define_Module(NetworkLayer);
 
 using namespace std;
+using namespace inet;
 
 void NetworkLayer::initialize(int stage)
 {
     if(stage == INITSTAGE_LOCAL) {
     numNodi = par("numNodi");
             matrice = new double *[numNodi];
-            RSSI = par("RSSI");
+
             for(int i = 0; i< numNodi ; i++){
                         matrice[i] = new double[numNodi];
                     for(int j=0;j < numNodi; j++){
                         matrice[i][j] = -1;
                         cout << "val:" << matrice[i][j] << endl;
-                    }}} else if(stage == INITSTAGE_APPLICATION_LAYER) {
+                    }}} else if(stage == INITSTAGE_NETWORK_LAYER_2) {
                         const char *dAddr = par("DestAddr").stringValue();
-                        const char *sAddr = par("SrcAddr").stringValue();
+                      //  const char *sAddr = par("SrcAddr").stringValue();
+
                         destAddr = resolveMACAddress(dAddr);
+
                         }
 }
 
@@ -46,7 +49,7 @@ void NetworkLayer::handleMessage(cMessage *msg)
              EV << "Packet received with RSSI: " << ctrl->getRSSI() << " W" << endl;
              // Ora bisogna aggiungerlo alla matrice
              //Forse ci vuole il puntatore
-             RSSI = ctrl->getRSSI();
+
              MACAddress SAddr = ctrl->getSourceAddress();
              delete ctrl;
            //  matrice[sAddr][SAddr] = RSSI;
@@ -81,7 +84,7 @@ void NetworkLayer::handleLowerMessage(cMessage *msg) {
 void NetworkLayer::transmitFrame() {
     IMACProtocolControlInfo *ctrl = new Ieee802Ctrl();
     ctrl->setDestinationAddress(destAddr);
-    ctrl->setSourceAddress(srcAddr);
+   // ctrl->setSourceAddress(srcAddr);
    Frame *pkt = new Frame();
     pkt->setControlInfo(dynamic_cast<cObject *>(ctrl));
      send(pkt,"lowerLayerOut");

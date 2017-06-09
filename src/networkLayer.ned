@@ -8,9 +8,8 @@ simple NetworkLayer
     
     parameters:
         string DestAddr;
-        string SrcAddr;
+     //   string SrcAddr;
         int numNodi = default(3);
-        double RSSI;
         
         
     gates:

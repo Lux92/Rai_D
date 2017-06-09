@@ -203,7 +203,13 @@ $O/RssiLinkLayerControlInfo.o: RssiLinkLayerControlInfo.cc \
 	$(INET_PROJ)/src/inet/linklayer/common/SimpleLinkLayerControlInfo_m.h \
 	$(INET_PROJ)/src/inet/linklayer/contract/IMACProtocolControlInfo.h
 $O/appLayer.o: appLayer.cc \
-	appLayer.h
+	appLayer.h \
+	networkLayer.h \
+	$(INET_PROJ)/src/inet/common/Compat.h \
+	$(INET_PROJ)/src/inet/common/INETDefs.h \
+	$(INET_PROJ)/src/inet/common/InitStages.h \
+	$(INET_PROJ)/src/inet/features.h \
+	$(INET_PROJ)/src/inet/linklayer/common/MACAddress.h
 $O/networkLayer.o: networkLayer.cc \
 	Frame_m.h \
 	RssiLinkLayerControlInfo.h \

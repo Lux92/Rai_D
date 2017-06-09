@@ -41,8 +41,8 @@ class NetworkLayer : public cSimpleModule
        int numNodi;
     double **matrice;
     MACAddress destAddr;
-    MACAddress srcAddr;
-    double RSSI;
+ //   MACAddress srcAddr;
+
 
 };
 

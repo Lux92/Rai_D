@@ -41,7 +41,7 @@ module Node
         networkLayer: NetworkLayer {
             @display("p=134,170;is=l");
         }
-        iWirelessNic: <nicType> like IWirelessNic {
+        nic: <nicType> like IWirelessNic {
             @display("p=134,287");
             radio.transmitter.preambleDuration = 192us;
             radio.bandwidth = 2.8MHz;
@@ -53,7 +53,7 @@ module Node
     connections:
         app.lowerLayerOut --> networkLayer.upperLayerIn;
         networkLayer.upperLayerOut --> app.lowerLayerIn;
-        networkLayer.lowerLayerOut --> iWirelessNic.upperLayerIn;
-        iWirelessNic.upperLayerOut --> networkLayer.lowerLayerIn;
-        channelIn --> iWirelessNic.radioIn;
+        networkLayer.lowerLayerOut --> nic.upperLayerIn;
+        nic.upperLayerOut --> networkLayer.lowerLayerIn;
+        channelIn --> nic.radioIn;
 }

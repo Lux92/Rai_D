@@ -1,0 +1,79 @@
+file 2824 1497024122                                            
+version 2
+run General-0-20170609-18:01:48-10096
+attr configname General
+attr datetime 20170609-18:01:48
+attr experiment General
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=0
+attr measurement ""
+attr network Test
+attr processid 10096
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param **.app.DataSize 32B
+param **.app.Period 0s
+param **.app.StartTime 0s
+param **.mobility.constraintAreaMaxX 200m
+param **.mobility.constraintAreaMaxY 200m
+param **.mobility.constraintAreaMaxZ 0m
+param **.mobility.constraintAreaMinX 0m
+param **.mobility.constraintAreaMinY 0m
+param **.mobility.constraintAreaMinZ 0m
+param **.mobility.initFromDisplayString false
+param **.networkLayer.DestAddr "\"node[1]\""
+param **.networkLayer.SrcAddr "\"node[1]\""
+param **.node[*].mobility.initialY 100m
+param **.node[*].mobility.initialZ 0m
+param **.node[0].app.StartTime -1s
+param **.node[0].mobility.initialX 50m
+param **.node[1].app.Period 20ms
+param **.node[1].mobility.initialX 100m
+param **.node[2].app.Period 30ms
+param **.node[2].mobility.initialX 150m
+param **.numNodes 3
+
+vector 0  Test.node[0].nic.radio  radioMode:vector  ETV
+attr interpolationmode  sample-hold
+attr source  radioModeChanged
+attr title  "Radio mode, vector"
+vector 3  Test.node[1].nic.radio  radioMode:vector  ETV
+attr interpolationmode  sample-hold
+attr source  radioModeChanged
+attr title  "Radio mode, vector"
+vector 6  Test.node[2].nic.radio  radioMode:vector  ETV
+attr interpolationmode  sample-hold
+attr source  radioModeChanged
+attr title  "Radio mode, vector"
+vector 1  Test.node[0].nic.radio  receptionState:vector  ETV
+attr interpolationmode  sample-hold
+attr source  receptionStateChanged
+attr title  "Radio reception state, vector"
+vector 4  Test.node[1].nic.radio  receptionState:vector  ETV
+attr interpolationmode  sample-hold
+attr source  receptionStateChanged
+attr title  "Radio reception state, vector"
+vector 7  Test.node[2].nic.radio  receptionState:vector  ETV
+attr interpolationmode  sample-hold
+attr source  receptionStateChanged
+attr title  "Radio reception state, vector"
+vector 2  Test.node[0].nic.radio  transmissionState:vector  ETV
+attr interpolationmode  sample-hold
+attr source  transmissionStateChanged
+attr title  "Radio transmission state, vector"
+vector 5  Test.node[1].nic.radio  transmissionState:vector  ETV
+attr interpolationmode  sample-hold
+attr source  transmissionStateChanged
+attr title  "Radio transmission state, vector"
+0	2497 47 0 16 0 0.001984 4 0 3 7 17
+1	2544 39 0 16 0 0.001984 3 0 1 2 2
+2	2583 61 8 16 0.001408 0.001984 4 0 2 4 6
+3	2644 38 0 18 0 0.001984166782 3 0 3 5 13
+4	2682 74 0 18 0 0.001984166782 4 0 3 5 11
+5	2756 22 18 18 0.001984166782 0.001984166782 1 1 1 1 1
+6	2778 16 0 0 0 0 2 0 2 2 4
+7	2794 30 0 12 0 0.001600333564 2 1 3 4 10
