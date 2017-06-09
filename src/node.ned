@@ -22,20 +22,20 @@ import inet.networklayer.common.InterfaceTable;
 
 module Node
 {
-     parameters:
+    parameters:
         @networkNode;
         string mobilityType = default("StationaryMobility");
         string nicType = default("Ieee802154NarrowbandNicRssi");
         *.mobilityModule = default(mobilityType != "" ? absPath(".mobility") : "");
         *.interfaceTableModule = default(absPath(".interfaceTable"));
-    @display("bgb=284,339");
+        @display("bgb=284,339");
     gates:
         input channelIn;
     submodules:
         interfaceTable: InterfaceTable {
             @display("p=50,87");
         }
-        appLayer: AppLayer {
+        app: AppLayer {
             @display("p=134,30");
         }
         networkLayer: NetworkLayer {
@@ -47,12 +47,12 @@ module Node
             radio.bandwidth = 2.8MHz;
         }
 
-        iMobility: <mobilityType> like IMobility {
+        mobility: <mobilityType> like IMobility {
             @display("p=252,87");
         }
     connections:
-        appLayer.lowerLayerOut --> networkLayer.upperLayerIn;
-        networkLayer.upperLayerOut --> appLayer.lowerLayerIn;
+        app.lowerLayerOut --> networkLayer.upperLayerIn;
+        networkLayer.upperLayerOut --> app.lowerLayerIn;
         networkLayer.lowerLayerOut --> iWirelessNic.upperLayerIn;
         iWirelessNic.upperLayerOut --> networkLayer.lowerLayerIn;
         channelIn --> iWirelessNic.radioIn;

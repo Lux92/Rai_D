@@ -1,12 +1,12 @@
 #
-# OMNeT++/OMNEST Makefile for Rai-d4-3
+# OMNeT++/OMNEST Makefile for Rai_D
 #
 # This file was generated with the command:
 #  opp_makemake -f --deep -I../../inet/src/inet/linklayer/common -I../../inet/src -I../../inet/src/inet/linklayer/csma -I../../inet/src/inet/networklayer/common -L../../inet/out/$$\(CONFIGNAME\)/src -lINET -KINET_PROJ=../../inet
 #
 
 # Name of target to be created (-o option)
-TARGET = Rai-d4-3$(EXE_SUFFIX)
+TARGET = Rai_D$(EXE_SUFFIX)
 
 # User interface (uncomment one) (-u option)
 USERIF_LIBS = $(ALL_ENV_LIBS) # that is, $(TKENV_LIBS) $(QTENV_LIBS) $(CMDENV_LIBS)
@@ -119,7 +119,7 @@ smheaders: $(SMFILES:.sm=_sm.h)
 clean:
 	$(qecho) Cleaning...
 	$(Q)-rm -rf $O
-	$(Q)-rm -f Rai-d4-3 Rai-d4-3.exe libRai-d4-3.so libRai-d4-3.a libRai-d4-3.dll libRai-d4-3.dylib
+	$(Q)-rm -f Rai_D Rai_D.exe libRai_D.so libRai_D.a libRai_D.dll libRai_D.dylib
 	$(Q)-rm -f ./*_m.cc ./*_m.h ./*_sm.cc ./*_sm.h
 
 cleanall: clean
